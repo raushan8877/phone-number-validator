@@ -36,3 +36,13 @@ print(is_valid4)  # Returns False
 The validate method takes a phone number and an optional country code as arguments. If the phone number is valid, the method returns True. If the phone number is invalid, the method returns False.
 
 If the API call fails for any reason, the method raises an HTTPError exception.
+import re
+def checker(contact):
+    pattern = r"[789]\d{9}$"
+    if re.match(pattern,contact):
+        return "YES"
+    else:
+        return "NO"
+n = int(input())
+for i in range(n):
+    print(checker(input()))            
